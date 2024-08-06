@@ -1,8 +1,8 @@
 using UnityEngine.SceneManagement;
 
-public class SceneController : Singleton<SceneController>
+public static class SceneController
 {
-    public void LoadScene(string sceneName)
+    public static void LoadScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }

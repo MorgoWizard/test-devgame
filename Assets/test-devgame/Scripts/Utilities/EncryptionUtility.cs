@@ -5,7 +5,7 @@ using System.Text;
 
 public class EncryptionUtility
 {
-    private const string EncryptionKey = "S1O5IF+BeHn4bqDgU1d7HTIhsoMI9hnIMMBvRO0FUzE=";
+    private const string EncryptionKey = "your-32-byte-long-encryption-key";
 
     public static string Encrypt(string plainText)
     {

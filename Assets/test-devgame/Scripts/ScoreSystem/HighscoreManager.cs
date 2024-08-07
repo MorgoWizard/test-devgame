@@ -30,11 +30,10 @@ public class HighscoreManager : Singleton<HighscoreManager>
 
     public void SetHighScore(int newScore)
     {
-        if (newScore > HighScore)
-        {
-            HighScore = newScore;
-            SaveHighScore();
-        }
+        if (newScore <= HighScore) return;
+        
+        HighScore = newScore;
+        SaveHighScore();
     }
 
     private void SaveHighScore()

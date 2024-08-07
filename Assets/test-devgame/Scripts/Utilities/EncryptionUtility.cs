@@ -3,10 +3,11 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 
+// TODO: Make static
 public class EncryptionUtility
 {
     private const string EncryptionKey = "your-32-byte-long-encryption-key";
-
+    
     public static string Encrypt(string plainText)
     {
         byte[] key = Encoding.UTF8.GetBytes(EncryptionKey);
@@ -22,6 +23,7 @@ public class EncryptionUtility
         return Convert.ToBase64String(msEncrypt.ToArray());
     }
 
+    // TODO: Add incorrect data processing
     public static string Decrypt(string cipherText)
     {
         byte[] fullCipher = Convert.FromBase64String(cipherText);

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class SingleShotWeapon : Weapon
 {
-    [SerializeField] private Projectile projectilePrefab;
     [SerializeField] private Transform firePoint;
 
     public override void Attack(Vector2 targetPosition)

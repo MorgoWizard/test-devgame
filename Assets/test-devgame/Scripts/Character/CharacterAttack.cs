@@ -58,10 +58,10 @@ public class CharacterAttack : MonoBehaviour
     {
         foreach (var weapon in weapons)
         {
-            if (weapon == newWeapon)
+            if (weapon.ID == newWeapon.ID)
             {
                 weapon.gameObject.SetActive(true);
-                _currentWeapon = newWeapon;
+                _currentWeapon = weapon;
             }
             else
             {

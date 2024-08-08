@@ -46,4 +46,15 @@ public class EntityHealth : MonoBehaviour
         OnDeath?.Invoke();
         gameObject.SetActive(false);
     }
+
+    private void ResetHealth()
+    {
+        _currentHealth = maxHealth;
+    }
+
+    public void SetHealth(float newMaxHealth)
+    {
+        maxHealth = newMaxHealth;
+        ResetHealth();
+    }
 }

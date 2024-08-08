@@ -10,8 +10,8 @@ public struct Zone
 
 public struct PlacedZone
 {
-    public Vector2 zonePosition;
-    public float zoneRadius;
+    public Vector2 ZonePosition;
+    public float ZoneRadius;
 }
 
 public class DangerZoneGenerator : MonoBehaviour
@@ -57,8 +57,8 @@ public class DangerZoneGenerator : MonoBehaviour
                 {
                     PlacedZone placedZone = new PlacedZone
                     {
-                        zonePosition = newZonePosition,
-                        zoneRadius = zoneRadius
+                        ZonePosition = newZonePosition,
+                        ZoneRadius = zoneRadius
                     };
                     _generatedZones.Add(placedZone);
                     CreateDangerZone(zone.zonePrefab, newZonePosition);
@@ -100,7 +100,7 @@ public class DangerZoneGenerator : MonoBehaviour
         // Проверка на минимальное расстояние между зонами
         foreach (PlacedZone existingZone in _generatedZones)
         {
-            if (Vector2.Distance(position, existingZone.zonePosition) < zoneRadius + minDistanceBetweenZones + existingZone.zoneRadius)
+            if (Vector2.Distance(position, existingZone.ZonePosition) < zoneRadius + minDistanceBetweenZones + existingZone.ZoneRadius)
             {
                 return false;
             }

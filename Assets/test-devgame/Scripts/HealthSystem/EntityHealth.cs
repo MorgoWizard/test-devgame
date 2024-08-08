@@ -29,6 +29,17 @@ public class EntityHealth : MonoBehaviour
             Die();
         }
     }
+    
+    public void InstantKill()
+    {
+        if (_currentHealth <= 0)
+        {
+            return;
+        }
+
+        _currentHealth = 0;
+        Die();
+    }
 
     private void Die()
     {

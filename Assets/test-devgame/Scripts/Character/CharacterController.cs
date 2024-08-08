@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
 
     private PlayerControls _playerControls;
 
-    
-
     private void Awake()
     {
         _playerControls = new();

@@ -8,9 +8,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -922935009756970485, guid: 2691367f58a206644b48cf7a7d06b515, type: 3}
+      propertyPath: projectilePrefab
+      value: 
+      objectReference: {fileID: -1657313450060323442, guid: 057af0aa632baa744ac6fc191c2ccc2b, type: 3}
     - target: {fileID: 3610247753747637830, guid: 2691367f58a206644b48cf7a7d06b515, type: 3}
       propertyPath: m_Name
-      value: SpreadWeapon
+      value: Shotgun
       objectReference: {fileID: 0}
     - target: {fileID: 7796996767755290462, guid: 2691367f58a206644b48cf7a7d06b515, type: 3}
       propertyPath: m_LocalPosition.x

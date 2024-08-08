@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     [Header("Movement Settings")]
     public float moveSpeed = 4f; // Скорость движения
     public float turnSpeed = 180f; // Скорость поворота
+    private float _currentSpeed;
 
     private Rigidbody2D _rigidbody2D;
     private Vector2 _moveInput;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D = GetComponent<Rigidbody2D>();
         
         _mainCamera = Camera.main;
+
+        ResetSpeed();
     }
 
     private void OnEnable()
@@ -59,7 +62,7 @@ public class PlayerController : MonoBehaviour
         _rigidbody2D.rotation = angle;
 
         // Движение игрока
-        Vector2 moveDirection = _moveInput.normalized * (moveSpeed * Time.deltaTime);
+        Vector2 moveDirection = _moveInput.normalized * (_currentSpeed * Time.deltaTime);
         _rigidbody2D.MovePosition(_rigidbody2D.position + moveDirection);
     }
 
@@ -82,5 +85,17 @@ public class PlayerController : MonoBehaviour
     private void OnLookCanceled(InputAction.CallbackContext context)
     {
         _lookInput = Vector2.zero;
+    }
+    
+    // Метод для модификации скорости
+    public void ModifySpeed(float speedFactor)
+    {
+        _currentSpeed = moveSpeed * speedFactor;
+    }
+
+    // Метод для сброса скорости к базовому значению
+    public void ResetSpeed()
+    {
+        _currentSpeed = moveSpeed;
     }
 }

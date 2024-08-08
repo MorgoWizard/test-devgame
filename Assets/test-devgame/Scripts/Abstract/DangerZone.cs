@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class DangerZone : MonoBehaviour
 {
-    [SerializeField] protected float radius;
+    [field: SerializeField] public float Radius { get; private set; }
 
     protected virtual void Start()
     {
@@ -11,7 +11,7 @@ public abstract class DangerZone : MonoBehaviour
 
     private void SetupZone()
     {
-        transform.localScale = new Vector3(radius * 2, radius * 2, 1);
+        transform.localScale = new Vector3(Radius * 2, Radius * 2, 1);
     }
     
     protected abstract void OnPlayerEnter(GameObject player);

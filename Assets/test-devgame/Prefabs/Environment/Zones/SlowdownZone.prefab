@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa12c29e2ecb0614194a6ef7f092e376, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 3
+  <Radius>k__BackingField: 3
   slowdownFactor: 0.6
 --- !u!58 &7595063478657666453
 CircleCollider2D:

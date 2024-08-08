@@ -136,4 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96643c354469c264988775171c7fdc0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 2
+  <Radius>k__BackingField: 1

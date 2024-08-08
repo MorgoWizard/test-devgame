@@ -130,8 +130,9 @@ GameObject:
   - component: {fileID: 164793385}
   - component: {fileID: 164793384}
   - component: {fileID: 164793383}
-  m_Layer: 0
-  m_Name: Square
+  - component: {fileID: 164793386}
+  m_Layer: 6
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -252,6 +253,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164793386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164793382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2375894d98df1bb4881f4cfd08ad2f70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
 --- !u!1 &716433413
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,6 +366,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 599226148676985529, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
+      propertyPath: defaultWeapon
+      value: 
+      objectReference: {fileID: 7602579283740289821, guid: 9623291c6fe357141b1ee66b7609aa99, type: 3}
     - target: {fileID: 4141544861615283287, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
       propertyPath: m_Name
       value: Character
@@ -399,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 9207322184376509649, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
       propertyPath: projectilePrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: -1657313450060323442, guid: 057af0aa632baa744ac6fc191c2ccc2b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

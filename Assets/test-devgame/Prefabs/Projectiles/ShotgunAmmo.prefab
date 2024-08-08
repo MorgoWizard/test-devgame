@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7596353014626743007, guid: 8424af50deaefb24d9a3d526d5e3db71, type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3418119373784925532, guid: 8424af50deaefb24d9a3d526d5e3db71, type: 3}
       propertyPath: m_Name
       value: ShotgunAmmo

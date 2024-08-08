@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -709983345625087799}
   - component: {fileID: 9033534286120374744}
   m_Layer: 0
-  m_Name: UnlimitedRangeBullet
+  m_Name: UnlimitedRangeAmmo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

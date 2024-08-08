@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Projectile : MonoBehaviour
 {
     [SerializeField] protected float speed;
-    [SerializeField] private float damage;
+    [SerializeField] protected float damage;
     
     [SerializeField] private float maxRange;
     
@@ -32,9 +32,8 @@ public abstract class Projectile : MonoBehaviour
 
     protected virtual void OnTargetReached()
     {
-        
     }
-    
+
     protected virtual void Update()
     {
         Move();

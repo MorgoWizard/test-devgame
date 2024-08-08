@@ -36,11 +36,6 @@ public class EnemyFollower : MonoBehaviour
         Gizmos.DrawLine(transform.position, target.position);
     }
 
-    public void SetTarget(Transform targetTransform)
-    {
-        target = targetTransform;
-    }
-
     public void SetSpeed(float newMoveSpeed)
     {
         moveSpeed = newMoveSpeed;

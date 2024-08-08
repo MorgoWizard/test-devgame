@@ -2,7 +2,6 @@ using UnityEngine;
 
 public abstract class DangerZone : MonoBehaviour
 {
-    [SerializeField] protected GameObject zonePrefab;
     [SerializeField] protected float radius;
 
     protected virtual void Start()

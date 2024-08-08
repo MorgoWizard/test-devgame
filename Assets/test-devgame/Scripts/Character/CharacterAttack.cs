@@ -6,7 +6,7 @@ public class CharacterAttack : MonoBehaviour
     [SerializeField] private Weapon[] weapons;
     [SerializeField] private Weapon defaultWeapon;
     
-    private Weapon _currentWeapon;
+    public Weapon CurrentWeapon { get; private set; }
     private PlayerControls _playerControls;
     private Camera _mainCamera;
 
@@ -40,7 +40,7 @@ public class CharacterAttack : MonoBehaviour
         {
             Vector2 mousePosition = _playerControls.Character.Look.ReadValue<Vector2>();
             Vector2 worldPosition = _mainCamera.ScreenToWorldPoint(mousePosition);
-            _currentWeapon.Attack(worldPosition);
+            CurrentWeapon.Attack(worldPosition);
         }
     }
 
@@ -54,14 +54,14 @@ public class CharacterAttack : MonoBehaviour
         _isAttacking = false;
     }
 
-    private void EquipWeapon(Weapon newWeapon)
+    public void EquipWeapon(Weapon newWeapon)
     {
         foreach (var weapon in weapons)
         {
             if (weapon.ID == newWeapon.ID)
             {
                 weapon.gameObject.SetActive(true);
-                _currentWeapon = weapon;
+                CurrentWeapon = weapon;
             }
             else
             {

@@ -4,25 +4,25 @@ public class ZoneSlowdown : DangerZone
 {
     [SerializeField] private float slowdownFactor = 0.6f;
 
-    private PlayerController _playerController;
-
-    protected override void OnPlayerEnter(GameObject player)
+    private CharacterMovement _characterMovement;
+    
+    protected override void OnPlayerExit(GameObject character)
     {
-        if (!_playerController)
+        if (!_characterMovement)
         {
-            _playerController = player.GetComponent<PlayerController>();
+            _characterMovement = character.GetComponent<CharacterMovement>();
         }
 
-        _playerController.ModifySpeed(slowdownFactor);
+        _characterMovement.ResetSpeed();
     }
 
-    protected override void OnPlayerExit(GameObject player)
+    protected override void OnPlayerStay(GameObject character)
     {
-        if (!_playerController)
+        if (!_characterMovement)
         {
-            _playerController = player.GetComponent<PlayerController>();
+            _characterMovement = character.GetComponent<CharacterMovement>();
         }
 
-        _playerController.ResetSpeed();
+        _characterMovement.ModifySpeed(slowdownFactor);
     }
 }

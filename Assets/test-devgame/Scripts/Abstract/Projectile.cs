@@ -17,6 +17,12 @@ public abstract class Projectile : MonoBehaviour
         }
     }
 
+    public void InitializeDestroyViaTargetReached(Vector2 targetPosition)
+    {
+        float flightTime = (transform.position - (Vector3)targetPosition).magnitude / speed;
+        StartCoroutine(DestroyOnTargetReached(flightTime));
+    }
+
     private IEnumerator DestroyOnTargetReached(float flightTime)
     {
         yield return new WaitForSeconds(flightTime);

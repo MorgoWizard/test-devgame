@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class DangerZone : MonoBehaviour
@@ -13,16 +14,35 @@ public abstract class DangerZone : MonoBehaviour
     {
         transform.localScale = new Vector3(Radius * 2, Radius * 2, 1);
     }
-    
-    protected abstract void OnPlayerEnter(GameObject player);
 
-    protected abstract void OnPlayerExit(GameObject player);
+    protected virtual void OnPlayerEnter(GameObject character)
+    {
+        
+    }
+
+    protected virtual void OnPlayerExit(GameObject character)
+    {
+        
+    }
+
+    protected virtual void OnPlayerStay(GameObject character)
+    {
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             OnPlayerEnter(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            OnPlayerStay(other.gameObject);
         }
     }
 

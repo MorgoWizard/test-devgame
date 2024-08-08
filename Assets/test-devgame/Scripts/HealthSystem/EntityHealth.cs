@@ -5,6 +5,8 @@ public class EntityHealth : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
     private float _currentHealth;
+    
+    private bool _isInvulnerable = false;
 
     public event Action OnDeath;
     public event Action<float> OnDamageTaken;
@@ -16,6 +18,8 @@ public class EntityHealth : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        if(_isInvulnerable) return;
+        
         if (_currentHealth <= 0)
         {
             return;
@@ -32,13 +36,7 @@ public class EntityHealth : MonoBehaviour
     
     public void InstantKill()
     {
-        if (_currentHealth <= 0)
-        {
-            return;
-        }
-
-        _currentHealth = 0;
-        Die();
+        TakeDamage(_currentHealth);
     }
 
     private void Die()
@@ -56,5 +54,10 @@ public class EntityHealth : MonoBehaviour
     {
         maxHealth = newMaxHealth;
         ResetHealth();
+    }
+
+    public void SetInvulnerable(bool status)
+    {
+        _isInvulnerable = status;
     }
 }

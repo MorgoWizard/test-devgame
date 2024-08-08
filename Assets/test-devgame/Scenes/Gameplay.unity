@@ -266,47 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
---- !u!1 &346975210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4141544861615283287, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
-  m_PrefabInstance: {fileID: 5489011140861809446}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &346975216
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346975210}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
 --- !u!1 &709232835
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,10 +499,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 599226148676985529, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
-      propertyPath: defaultWeapon
-      value: 
-      objectReference: {fileID: 7602579283740289821, guid: 9623291c6fe357141b1ee66b7609aa99, type: 3}
     - target: {fileID: 4141544861615283287, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
       propertyPath: m_Name
       value: Character
@@ -588,17 +543,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9207322184376509649, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: -1657313450060323442, guid: 057af0aa632baa744ac6fc191c2ccc2b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4141544861615283287, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 346975216}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb81ccd6dd8dd254f800e0f17cc1c283, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

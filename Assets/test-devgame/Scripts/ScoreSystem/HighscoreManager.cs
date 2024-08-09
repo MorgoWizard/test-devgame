@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.IO;
 
@@ -7,6 +8,8 @@ public class HighscoreManager : Singleton<HighscoreManager>
 
     private string _filePath;
     private const string FileName = "highscore.dat";
+
+    public static event Action<int> OnNewHighscore;
 
     protected override void Awake()
     {
@@ -30,9 +33,8 @@ public class HighscoreManager : Singleton<HighscoreManager>
 
     public void SetHighScore(int newScore)
     {
-        if (newScore <= HighScore) return;
-        
         HighScore = newScore;
+        OnNewHighscore?.Invoke(HighScore);
         SaveHighScore();
     }
 

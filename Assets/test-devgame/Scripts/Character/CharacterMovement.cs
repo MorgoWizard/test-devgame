@@ -33,9 +33,6 @@ public class CharacterMovement : MonoBehaviour
 
         _playerControls.Character.Move.performed += OnMovePerformed;
         _playerControls.Character.Move.canceled += OnMoveCanceled;
-
-        _playerControls.Character.Look.performed += OnLookPerformed;
-        _playerControls.Character.Look.canceled += OnLookCanceled;
     }
 
     private void OnDisable()
@@ -44,15 +41,15 @@ public class CharacterMovement : MonoBehaviour
 
         _playerControls.Character.Move.performed -= OnMovePerformed;
         _playerControls.Character.Move.canceled -= OnMoveCanceled;
-
-        _playerControls.Character.Look.performed -= OnLookPerformed;
-        _playerControls.Character.Look.canceled -= OnLookCanceled;
     }
 
     private void FixedUpdate()
     {
+        _lookInput = _playerControls.Character.Look.ReadValue<Vector2>();
+        _lookInput = _mainCamera.ScreenToWorldPoint(new Vector3(_lookInput.x, _lookInput.y, _mainCamera.nearClipPlane));
         // Поворот игрока в сторону курсора
         Vector2 direction = _lookInput - (Vector2)transform.position;
+        
         // Рассчитываем угол к курсору
         float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         
@@ -74,17 +71,6 @@ public class CharacterMovement : MonoBehaviour
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         _moveInput = Vector2.zero;
-    }
-
-    private void OnLookPerformed(InputAction.CallbackContext context)
-    {
-        _lookInput = context.ReadValue<Vector2>();
-        _lookInput = _mainCamera.ScreenToWorldPoint(new Vector3(_lookInput.x, _lookInput.y, _mainCamera.nearClipPlane));
-    }
-
-    private void OnLookCanceled(InputAction.CallbackContext context)
-    {
-        _lookInput = Vector2.zero;
     }
     
     // Метод для модификации скорости

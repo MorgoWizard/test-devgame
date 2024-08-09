@@ -62,7 +62,7 @@ public class EnemySpawner : MonoBehaviour
     {
         GameObject selectedEnemyPrefab = GetRandomEnemyPrefab();
 
-        if (selectedEnemyPrefab != null)
+        if (selectedEnemyPrefab)
         {
             Vector2 spawnPosition = GetSpawnPosition();
             Instantiate(selectedEnemyPrefab, spawnPosition, Quaternion.identity);
@@ -90,7 +90,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
 
-        return null;
+        return enemiesToSpawn[0].enemyPrefab;
     }
 
     private Vector2 GetSpawnPosition()
